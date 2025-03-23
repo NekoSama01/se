@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+        <title></title>
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load static %}
+        <link rel="stylesheet" href="{% static '../static/css/style.css' %}" defer>
+    </head>
+    <body>
+        <header>
+            <div class="logo"> 
+                <img src="{% static 'images/Logo.png' %}" alt="Logo">
+            </div>
+            <nav class="navbar navbar-light bg-white p-3">
+                <div class="container">
+                    <div>
+                        <a href="#" class="me-3 text-dark">Login</a>
+                    </div>
+                </div>
+        </nav>
+        </header>
+        <h1>ข้อมูลสถานประกอบการ</h1>
+        <main>
+            <section class="company-info">
+                <img src="{{partner.image_pn.url}}" alt="Company Building">
+                <h2>บริษัท {{partner.name_en}}</h2>
+
+                <div class="info-section">
+                    <div class="info-box" align="left">
+                        <h3>ข้อมูลทั่วไปบริษัท</h3>
+                        <p><strong>ชื่อบริษัท (ภาษาไทย):</strong> {{partner.name_th}}</p>
+                        <p><strong>ชื่อบริษัท (ภาษาอังกฤษ):</strong> {{partner.name_en}}</p>
+                        <p><strong>E-mail:</strong> {{partner.email_pn}}</p>
+                        <p><strong>Website:</strong> {{partner.website}}</p>
+                        <p><strong>แนะนำบริษัท:</strong> {{partner.description_pn}}</p>
+                    </div>
+
+                    <div class="info-box" align="left">
+                        <h3>ข้อมูลที่ตั้งบริษัท</h3>
+                        <p><strong>จังหวัด:</strong> {{partner.province}}</p>
+                        <p><strong>อำเภอ:</strong> {{partner.district}}</p>
+                        <p><strong>ตำบล:</strong> {{partner.subdistrict}}</p>
+                        <p><strong>หมู่ที่:</strong> {{partner.moo}}</p>
+                        <p><strong>เลขที่:</strong> {{partner.building_no}}</p>
+                        <p><strong>รหัสไปรษณีย์:</strong> {{partner.postal_code}}</p>
+                    </div>
+
+                    <div class="info-box" align="left">
+                        <h3>ข้อมูลผู้ประสานงาน</h3>
+                        <p><strong>ชื่อผู้ประสานงาน:</strong> {{hr.name_hr}}</p>
+                        <p><strong>ตำแหน่ง:</strong> {{hr.job_title}}</p>
+                        <p><strong>E-mail:</strong> {{hr.email_hr}}</p>
+                        <p><strong>โทรศัพท์:</strong> {{hr.phone}}</p>
+                    </div>
+                </div>
+
+                <div class="job-section">
+                    <h3>ข้อมูลตำแหน่งงานที่เกี่ยวข้อง</h3><!--loop ตรงนี้-->
+                    <p><strong>ตำแหน่ง:</strong> UX/UI Designer <!--{{job.job_name}}--><a href="#">รายละเอียด</a></p><!--hidden inputตรงนี้-->
+                    <p><strong>ตำแหน่ง:</strong> Programmer <a href="#">รายละเอียด</a></p>
+                </div>
+            </section>
+
+            <section class="reviews">
+                <h2>รีวิว</h2><!--loop ตรงนี้-->
+                <div class="review">
+                    <div class="user-icon">👤<!--{{review.student.studentname_th}}--></div>
+                    <div class="review-content">
+                        <p>DD/MM/YEAR<!--{{review.review_date}}--></p>
+                        <p>..........................<!--{{review.review_text}}--></p>
+                    </div>
+                </div>
+                <div class="review">
+                    <div class="user-icon">👤</div>
+                    <div class="review-content">
+                        <p>DD/MM/YEAR</p>
+                        <p>..........................</p>
+                    </div>
+                </div>
+                <div class="review">
+                    <div class="user-icon">👤</div>
+                    <div class="review-content">
+                        <p>DD/MM/YEAR</p>
+                        <p>..........................</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>

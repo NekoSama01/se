@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="utf-8">
+        <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+        <title></title>
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load static %}
+        <link rel="stylesheet" href="{% static '../static/css/style.css' %}" defer>
+</head>
+<body>
+    <header>
+        <div class="logo"> 
+                <img src="{% static 'images/Logo.png' %}" alt="Logo">
+            </div>
+            <nav class="navbar navbar-light bg-white p-3">
+                <div class="container">
+                    <div>
+                        <a href="#" class="me-3 text-dark">Login</a>
+                    </div>
+                </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>รายละเอียดตำแหน่งงาน</h1>
+            <div class="card">
+                <img src="{{job.hr.partner.image_pn.url}}" alt="บริษัท Technology_lnwza007">
+                <h2>บริษัท {{job.hr.partner.name_en}}</h2>
+
+                <div class="job-info">
+                    <p><strong>ตำแหน่งงาน:</strong> {{job.job_name}}</p>
+                    <p><strong>ทักษะ:</strong> {{job.job_skill}}</p>
+                    <p><strong>รายละเอียดตำแหน่งงาน:</strong></p>
+                    <ul>
+                        <li>ออกแบบเว็บไซต์ ออกแบบ Content</li>
+                        <li>พัฒนาเว็บไซต์ ออกแบบฐานข้อมูล และเขียนโปรแกรม แก้ไขปัญหาเบื้องต้นเกี่ยวกับคอมพิวเตอร์</li>
+                        <li>งานอื่นๆ ตามที่ได้รับมอบหมาย</li>
+                    </ul>
+                    <p><strong>สาขาวิชา:</strong> {{job.job_major}}</p>
+                    <p><strong>สวัสดิการ:</strong> {{job.job_welfare_benefits}}</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
